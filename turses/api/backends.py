@@ -293,10 +293,10 @@ class TweepyApi(BaseTweepyApi, ApiAdapter):
         return self._api.retweets_of_me(**kwargs)
 
     def update(self, text):
-        self._api.update_status(text)
+        self._api.update_status(status=text)
 
     def reply(self, status, text):
-        self._api.update_status(text, in_reply_to_status_id=status.id)
+        self._api.update_status(status=text, in_reply_to_status_id=status.id)
 
     def destroy_status(self, status):
         self._api.destroy_status(status.id)
